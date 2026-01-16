@@ -1,0 +1,22 @@
+# Rust build artifacts
+/target/
+
+# Cargo lock (library project)
+/Cargo.lock
+
+
+# macOS files
+.DS_Store
+
+
+# VS Code
+.vscode/
+
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+desktop.ini
+
