@@ -1,0 +1,34 @@
+[package]
+name = "algorithmic-benchmark-suite-rust"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["Celso M. Silva"]
+description = "Systems-level framework for implementing and benchmarking classical algorithms in Rust."
+license = "MIT"
+
+[lib]
+name = "algorithmic_benchmark_suite_rust"
+path = "modern_rust/src/lib.rs"
+
+[dependencies]
+# No external dependencies.
+# This project intentionally relies only on the Rust standard library.
+
+[[bin]]
+name = "binary_search_benchmark"
+path = "modern_rust/benchmarks/binary_search_benchmark.rs"
+
+[[bin]]
+name = "bubble_sort_benchmark"
+path = "modern_rust/benchmarks/bubble_sort_benchmark.rs"
+
+[[bin]]
+name = "linked_list_benchmark"
+path = "modern_rust/benchmarks/linked_list_benchmark.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
