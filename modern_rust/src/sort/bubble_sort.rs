@@ -1,0 +1,60 @@
+/*
+ * ORIGINAL FILE: bubblesort.c
+ *
+ * Simple bubble sort implementation.
+ * Sorts an integer array in ascending order.
+ *
+ * Educational version (no early exit optimization).
+ *
+ * This Rust version preserves the same procedural structure:
+ * explicit loops, explicit indices, and in-place mutation.
+ */
+
+fn main() {
+    let mut values: [i32; 8] = [3, 0, 5, 1, 8, 9, 2, 4];
+    let size: i32 = 8;
+
+    print!("ARRAY: [ ");
+    print_array(&values, size);
+    println!("]");
+
+    bubble_sort(&mut values, size);
+
+    print!("SORTED ARRAY: [ ");
+    print_array(&values, size);
+    println!("]");
+}
+
+/*
+ * bubble_sort:
+ * Performs an in-place bubble sort on the array.
+ */
+fn bubble_sort(array: &mut [i32; 8], size: i32) {
+    let mut i: i32;
+    let mut j: i32;
+    let mut temp: i32;
+
+    for j in 0..size - 1 {
+        for i in 0..size - 1 {
+            let idx = i as usize;
+            if array[idx] > array[idx + 1] {
+                temp = array[idx];
+                array[idx] = array[idx + 1];
+                array[idx + 1] = temp;
+            }
+        }
+    }
+}
+
+/*
+ * print_array:
+ * Prints the elements of the array.
+ */
+fn print_array(array: &[i32; 8], size: i32) {
+    let mut i: i32;
+
+    for i in 0..size {
+        print!("{} ", array[i as usize]);
+    }
+}
+
